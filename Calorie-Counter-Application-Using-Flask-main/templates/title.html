@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=width=1200px, initial-scale=1.0">
+    <title>Title Page</title>
+    <link rel="icon" href="{{url_for('static',filename='logo.png')}}" type="image/jpg">
+    <link rel="stylesheet" href="{{url_for('static',filename='title.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <ul class = "nav">
+        <img src="{{url_for('static',filename='calorieCounter.jpg')}}" height="78px" width="300px">
+        <div class="navbar">
+            <li class="navbar-item"><a href="{{url_for('login')}}" class="navRef"><b>Login</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('registration')}}" class="navRef"><b>Registration</b></a></li>
+        </div>
+    </ul>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <center class="regSucs">
+                    <b>{{ message }}</b>
+                </center>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="main">
+        <div class="text">
+            <h1 style="margin-left: 14%; margin-top: 9%;">Counting calories today,<br>
+                    for a healthier tomorrow.</h1>
+            <h4 style="margin-left: 18%; margin-top: -3%; font-size: 22px;">Your calorie journey starts here. Let us guide you.</h4>
+            <button type="submit"><a class="bodyLink" href="{{url_for('registration')}}"><b style="font-size: 27px; padding: 10px; color: black;">Register Here for Free <b style="font-weight: bolder; font-weight: 500;">&#8594;</b></b></a></button>
+            <h2 style="margin-left: 28%;">Already an user - <a class="bodyLink" href="{{url_for('login')}}"><b style="color: white;">Login Here!!</b></a></b></h2>
+        </div>
+        <div class="image">
+            <img src="{{url_for('static',filename='food-title-down.jpg')}}" height="500px" width="750px" style="border-radius: 10px;">
+        </div>
+    </div>
+</body>
+<footer>
+    <section class="footerDiv">
+        <div class="foot" style="width: 33.33%;">
+           <b><p style="margin-left: 15%; margin-bottom: 0px; margin-top: 0px; font-size: larger;">Contact Us</p><br>
+                <ul style="margin-left: 12%; margin-top: -12px; list-style-type: none;" >
+                    <li><i class="fa fa-phone" style="font-size:15px"></i> Phone: <a href="tel:9849905580" style="text-decoration: none;">9849905580</a><br></li>
+                    <li><i class="material-icons" style="font-size:15px; margin-top: 3px;">email</i> Email: <a href="mailto:caloriecounterapplication@gmail.com" style="text-decoration: none;">caloriecounterapplication@gmail.com</a></li>
+                </ul>
+            </b>
+        </div>
+        <div class="foot" style="width: 85%;">
+            <b style="font-size: larger; margin-left: 170px;">Unlock the power of mindful eating. Track your calories effortlessly.</b>
+            <p style="margin-top: 0px; font-size: large; padding: 10px;">Track, analyze, and conquer your calories with our intuitive and powerful calorie counter application. Empower yourself to make informed choices, achieve your health goals, and live a balanced life. Join our community of calorie-conscious individuals and take control of your wellness journey today.</p>
+        </div>
+    </section>
+    <h3 style="text-align: center; padding: 0px; margin-bottom: -7px;"><b>&copy;2023 All Rights Reserved</b></h3><br>
+</footer>
+</html>

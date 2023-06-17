@@ -1,0 +1,141 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+  }
+
+  footer{
+    margin: -10px;
+    width: 101%;
+    margin-top: 50px;
+    background-color: whitesmoke;
+  }
+
+  .footerDiv{
+    display: flex;
+  }
+
+.foot{
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: -2%;
+}
+
+.nav{
+  display: flex;
+  height: 75px;
+  padding: 10px;
+  margin: -10px;
+  width: 99.9%;
+  background-color: whitesmoke;
+}
+
+.navbar{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: 50%;
+}
+
+.navbar-item{
+  padding: 15px;
+  margin: 15px; 
+  font-size: large;
+}
+
+
+.navRef:link, .navRef:visited, .navRef:active {
+  color: black;
+  text-decoration: none;
+}
+
+.navRef:hover{
+  color: black;
+  text-decoration: underline;
+}
+
+.bodyLink:link, .bodyLink:visited, .bodyLink:active {
+  text-decoration: none;
+}
+
+.bodyLink:hover{
+  text-decoration: underline;
+}
+
+.regSucs{
+  margin-top: 30px;
+  color: greenyellow;
+  font-size: 20px;
+  margin-bottom: -3%;
+}
+
+.formBox{
+    margin-top: 60px;
+    display: flex;
+}
+
+.leftBox{
+    flex-grow: 1;
+}
+
+.formFields {
+    margin-top: 10px;
+    text-align: left;
+    padding: 10%;
+    font-size: larger;
+    display: flex;
+  }
+  
+  input {
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  
+  .numInp{
+    padding: 7px;
+    width: 80%;
+    margin-top: 3px;
+  }
+
+  .leftForm{
+    flex-grow: 1;
+  }
+  
+  input[type='text']{
+    width: 30%;
+    margin-top: 5px;
+  }
+
+.rightInp{
+    width: 20%;
+    margin-top: 5px;
+    margin-left: 5%;
+}
+
+input[type='text']{
+    margin-left: 4%;
+}
+
+.rightForm{
+    margin-top: -10px;
+    margin-left: 120px;
+    font-size: larger;
+}
+
+.logo{
+    margin-top: -50px;
+    margin-left: 87%;
+}
+
+button{
+    font-size: 35px;
+    margin-left: 38%;
+    width: 370px;
+    height: 60px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+

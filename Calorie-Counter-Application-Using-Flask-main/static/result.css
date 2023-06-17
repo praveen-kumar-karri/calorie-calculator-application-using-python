@@ -1,0 +1,102 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+  }
+
+  footer{
+    margin: -10px;
+    width: 101%;
+    margin-top: -0.45%;
+    background-color: whitesmoke;
+  }
+
+  .footerDiv{
+    display: flex;
+  }
+
+.foot{
+    flex-grow: 1;
+    margin-top: 10px;
+    margin-bottom: -2%;
+}
+
+.nav{
+  display: flex;
+  height: 75px;
+  padding: 10px;
+  margin: -10px;
+  width: 99.9%;
+  background-color: whitesmoke;
+}
+
+.navbar{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: 40%;
+}
+
+.navbar-item{
+  padding: 15px;
+  margin: 15px; 
+  font-size: large;
+}
+
+
+.navRef:link, .navRef:visited, .navRef:active {
+  color: black;
+  text-decoration: none;
+}
+
+.navRef:hover{
+  color: black;
+  text-decoration: underline;
+}
+
+.bodyLink:link, .bodyLink:visited, .bodyLink:active {
+  text-decoration: none;
+}
+
+.bodyLink:hover{
+  text-decoration: underline;
+}
+
+.regSucs{
+  margin-top: 30px;
+  color: greenyellow;
+  font-size: 30px;
+  margin-bottom: -3%;
+}
+
+table {
+    margin-top: 0%;
+    width: 45%;
+    border-collapse: collapse;
+    background-color: aliceblue;
+    font-size: larger;
+    margin-left: 19%;
+    border-radius: 15px;
+}
+
+tr{
+    height:50px;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px outset black;
+}
+th {
+    padding: 12px;
+    text-align: left;
+    width: 50%;
+    border-bottom: 2px outset black;
+    border-right: 2px outset black;
+}
+
+table, th, td {
+    border-collapse: collapse;
+}

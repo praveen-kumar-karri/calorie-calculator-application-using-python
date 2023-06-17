@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=width=1200px, initial-scale=1.0">
+    <title>Result Page</title>
+    <link rel="icon" href="{{url_for('static',filename='logo.png')}}" type="image/jpg">
+    <link rel="stylesheet" href="{{url_for('static',filename='result.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <ul class = "nav">
+        <img src="{{url_for('static',filename='calorieCounter.jpg')}}" height="78px" width="300px" onclick="{{url_for('home')}}">
+        <div class="navbar">
+            <li class="navbar-item"><a href="{{url_for('home')}}" class="navRef"><b>Home</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('calorie')}}" class="navRef"><b>Calorie Calculator</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('history')}}" class="navRef"><b>History</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('about')}}" class="navRef"><b>About Us</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('logout')}}" class="navRef"><b>Logout</b></a></li>
+        </div>
+    </ul>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <center class="regSucs">
+                    <b>{{ message }}</b>
+                </center>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <img src="{{url_for('static',filename='logo.png')}}" width="400px" heigh="500px" style="margin-left: 65%; margin-top:10%;">
+    <h1 style="margin-top: -30%; margin-left: 19%;">Detailed Report</h1>
+        <table>
+            <tr>
+                <th>Weight</th>
+                <td>{{data[0]}}</td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>{{data[1]}}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{data[2]}}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{data[3]}}</td>
+            </tr>
+            <tr>
+                <th>BMR</th>
+                <td>{{data[4]}}</td>
+            </tr>
+            <tr>
+                <th>Food Calories</th>
+                <td>{{data[6]}}</td>
+            </tr>
+            <tr>
+                <th>Result</th>
+                <td>{{data[5]}}</td>
+            </tr>
+            <tr>
+                <th style="border-bottom: none;">Username</th>
+                <td style="border-bottom: none;">{{data[7]}}</td>
+            </tr> 
+        </table>
+</body>
+<div style="background-color: antiquewhite; border-radius: 10px; margin-top: 40px;">
+    <h2>&nbsp; &nbsp; Note:</h2>
+    <h3 style="margin-top: -20px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -ve result indicates that the user is consuming less calories than required<br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +ve result indicates that the user is consuming more calories than required</h3>
+    </div>
+<footer>
+    <section class="footerDiv">
+        <div class="foot" style="width: 33.33%;">
+           <b><p style="margin-left: 15%; margin-bottom: 0px; margin-top: 0px; font-size: larger;">Contact Us</p><br>
+                <ul style="margin-left: 12%; margin-top: -12px; list-style-type: none;" >
+                    <li><i class="fa fa-phone" style="font-size:15px"></i> Phone: <a href="tel:9849905580" style="text-decoration: none;">9849905580</a><br></li>
+                    <li><i class="material-icons" style="font-size:15px; margin-top: 3px;">email</i> Email: <a href="mailto:caloriecounterapplication@gmail.com" style="text-decoration: none;">caloriecounterapplication@gmail.com</a></li>
+                </ul>
+            </b>
+        </div>
+        <div class="foot" style="width: 85%;">
+            <b style="font-size: larger; margin-left: 170px;">Unlock the power of mindful eating. Track your calories effortlessly.</b>
+            <p style="margin-top: 0px; font-size: large; padding: 10px;">Track, analyze, and conquer your calories with our intuitive and powerful calorie counter application. Empower yourself to make informed choices, achieve your health goals, and live a balanced life. Join our community of calorie-conscious individuals and take control of your wellness journey today.</p>
+        </div>
+    </section>
+    <h3 style="text-align: center; padding: 0px; margin-bottom: -7px;"><b>&copy;2023 All Rights Reserved</b></h3><br>
+</footer>
+</html>

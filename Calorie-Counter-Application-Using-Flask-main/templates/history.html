@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=width=1200px, initial-scale=1.0">
+    <title>History Page</title>
+    <link rel="icon" href="{{url_for('static',filename='logo.png')}}" type="image/jpg">
+    <link rel="stylesheet" href="{{url_for('static',filename='history.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <ul class = "nav">
+        <img src="{{url_for('static',filename='calorieCounter.jpg')}}" height="78px" width="300px" onclick="{{url_for('home')}}">
+        <div class="navbar">
+            <li class="navbar-item"><a href="{{url_for('home')}}" class="navRef"><b>Home</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('calorie')}}" class="navRef"><b>Calorie Calculator</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('about')}}" class="navRef"><b>About Us</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('logout')}}" class="navRef"><b>Logout</b></a></li>
+        </div>
+    </ul>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <center class="regSucs">
+                    <b>{{ message }}</b>
+                </center>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1 style="margin-top: 2%;">Your Calorie Count History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>BMR</th>
+                <th>Food Calories</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr> 
+                <td>{{i[9]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[4]}}</td>
+                <td>{{i[5]}}</td>
+                <td>{{i[6]}}</td>
+                <td>{{i[7]}}</td>
+                <td><a href="{{url_for('view',nid=i[0])}}" class="his"><b>View</b></a></td>
+                <td><a href="{{url_for('delete',nid=i[0])}}" class="his"><b>Delete</b></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div style="background-color: antiquewhite; border-radius: 10px;">
+    <h2>&nbsp; &nbsp; Note:</h2>
+    <h3 style="margin-top: -20px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -ve result indicates that the user is consuming less calories than required<br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +ve result indicates that the user is consuming more calories than required</h3>
+    </div>
+</body>
+</html>

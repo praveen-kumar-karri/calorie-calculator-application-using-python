@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=width=1200px, initial-scale=1.0">
+    <title>Calorie Counter Page</title>
+    <link rel="icon" href="{{url_for('static',filename='logo.png')}}" type="image/jpg">
+    <link rel="stylesheet" href="{{url_for('static',filename='calorie.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <ul class = "nav">
+        <img src="{{url_for('static',filename='calorieCounter.jpg')}}" height="78px" width="300px" onclick="{{url_for('home')}}">
+        <div class="navbar">
+            <li class="navbar-item"><a href="{{url_for('home')}}" class="navRef"><b>Home</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('history')}}" class="navRef"><b>View History</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('about')}}" class="navRef"><b>About Us</b></a></li>
+            <li class="navbar-item"><a href="{{url_for('logout')}}" class="navRef"><b>Logout</b></a></li>
+        </div>
+    </ul>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <center class="regSucs">
+                    <b>{{ message }}</b>
+                </center>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form method="post">
+    <div class="formBox">
+            <div class="leftBox" style="border: 2px solid black; width: 40%; background-color: whitesmoke; height: 450px; border-radius: 20px; margin-top: 20px;">
+                <h1 style="margin-left: 30px;">Calorie Counter</h1>
+                <div class="formFields" style="padding: 20px;"> 
+                    <div class="leftForm" style="margin-left: 30px; margin-top: -15px; width: 80%;">
+                        <label for="weight"><b>Weight</b></label><br>
+                        <input type="number" name="weight" placeholder="Enter your weight in kgs" class="numInp" required autocomplete="on"><br><br>
+                        <label for="height"><b>Height</b></label><br>
+                        <input type="number" name="height" placeholder="Enter your height in cms" autocomplete="on" class="numInp" required><br><br>
+                        <label for="age"><b>Age</b></label><br>
+                        <input type="number" name="age" placeholder="Enter your age in yrs" autocomplete="on" max="120" min="1" class="numInp" required><br><br>
+                        <label for="gender"><b>Gender</b></label><br>
+                        <select name="gender" id="gender" style="width: 25%; height: 25px; border-radius: 5px;" required>
+                            <option value="male"><b>Male</b></option>
+                            <option value="female"><b>Female</b></option>
+                        </select>
+                    </div>
+                    <div class="leftImage" style="margin-top:-15px;">
+                        <img src="{{url_for('static',filename='bmr.png')}}" width="120%" style="margin-top: -15px; margin-left: -75px;">
+                    </div>
+                </div>
+            </div>
+        <div class="rightBox" style="border: 2px solid black; width: 50%; background-color: whitesmoke; height: 450px; border-radius: 20px; margin: 20px;">
+            <h2 style="margin-left: 30px;">Enter your food details here...</h2>
+            <img src="{{url_for('static',filename='logo.png')}}" width="100px" height="100px" class="logo">
+            <h3 style="margin-left: 270px; margin-top: -45px;">Food Item &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Quantity(in gms)</h3>
+            <div class="rightForm">
+                <label for="item1"><b>Item 1: </b></label>
+                <input type="text" name="item1" value="None">
+                <input type="number" name="quantity1" min="0" class="rightInp" value="0"><br>
+                <label for="item2"><b>Item 2: </b></label>
+                <input type="text" name="item2" value="None">
+                <input type="number" name="quantity2" min="0" class="rightInp" value="0"><br>
+                <label for="item3"><b>Item 3: </b></label>
+                <input type="text" name="item3" value="None">
+                <input type="number" name="quantity3" min="0" class="rightInp" value="0"><br>
+                <label for="item1"><b>Item 4: </b></label>
+                <input type="text" name="item4" value="None">
+                <input type="number" name="quantity4" min="0" class="rightInp" value="0"><br>
+                <label for="item5"><b>Item 5: </b></label>
+                <input type="text" name="item5" value="None">
+                <input type="number" name="quantity5" min="0" class="rightInp" value="0"><br>
+                <label for="item6"><b>Item 6: </b></label>
+                <input type="text" name="item6" value="None">
+                <input type="number" name="quantity6" min="0" class="rightInp" value="0"><br>
+                <label for="item7"><b>Item 7: </b></label>
+                <input type="text" name="item7" value="None">
+                <input type="number" name="quantity7" min="0" class="rightInp" value="0"><br>
+                <label for="item8"><b>Item 8: </b></label>
+                <input type="text" name="item8" value="None">
+                <input type="number" name="quantity8" min="0" class="rightInp" value="0"><br>
+            </div>
+            <h4 style="margin-top: 20px; margin-left: 32px;">To know more details about food-items and their calories, <a href="https://drive.google.com/file/d/1EUQvRhR3-LyRxYDgIjYHfiBrA7ttujmb/view?usp=sharing">Click Here!!!</a></h4>
+        </div>
+    </div>
+    <button type="submit">Calculate Calories</button>
+</form>
+</body>
+<footer>
+    <section class="footerDiv">
+        <div class="foot" style="width: 33.33%;">
+           <b><p style="margin-left: 15%; margin-bottom: 0px; margin-top: 0px; font-size: larger;">Contact Us</p><br>
+                <ul style="margin-left: 12%; margin-top: -12px; list-style-type: none;" >
+                    <li><i class="fa fa-phone" style="font-size:15px"></i> Phone: <a href="tel:9849905580" style="text-decoration: none;">9849905580</a><br></li>
+                    <li><i class="material-icons" style="font-size:15px; margin-top: 3px;">email</i> Email: <a href="mailto:caloriecounterapplication@gmail.com" style="text-decoration: none;">caloriecounterapplication@gmail.com</a></li>
+                </ul>
+            </b>
+        </div>
+        <div class="foot" style="width: 85%;">
+            <b style="font-size: larger; margin-left: 170px;">Unlock the power of mindful eating. Track your calories effortlessly.</b>
+            <p style="margin-top: 0px; font-size: large; padding: 10px;">Track, analyze, and conquer your calories with our intuitive and powerful calorie counter application. Empower yourself to make informed choices, achieve your health goals, and live a balanced life. Join our community of calorie-conscious individuals and take control of your wellness journey today.</p>
+        </div>
+    </section>
+    <h3 style="text-align: center; padding: 0px; margin-bottom: -7px;"><b>&copy;2023 All Rights Reserved</b></h3><br>
+</footer>
+</html>
